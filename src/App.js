@@ -1,22 +1,38 @@
-import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
-
+import i18n from "i18next";
+import { useTranslation, initReactI18next, Trans } from "react-i18next";
+import HttpBackend from "i18next-http-backend";
+i18n
+  .use(initReactI18next)
+  .use(HttpBackend)
+  .init({
+    backend: { loadPath: "/translations/{{lng}}.json" },
+    lng: "en",
+    fallbackLng: "en",
+    interpolation: { escapeValue: false },
+  });
 function App() {
+  const { t } = useTranslation();
+  const [count, setCount] = useState(0);
+  const onChange = (event) => {
+    i18n.changeLanguage(event.target.value);
+    setCount((previousCount) => previousCount + 1);
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>{t("welcome")}</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <Trans components={{ bold: <strong />, italic: <i /> }}>
+            sampleText
+          </Trans>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{t("changed", { count })}</p>
+        <select name="language" onChange={onChange}>
+          <option value="fr">français</option>
+          <option value="ar">arabe</option>
+        </select>
       </header>
     </div>
   );
