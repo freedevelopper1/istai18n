@@ -8,9 +8,8 @@ i18n
   .use(HttpBackend)
   .init({
     backend: { loadPath: "/translations/{{lng}}.json" },
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: { escapeValue: false },
+    lng: "fr",
+    fallbackLng: "fr"
   });
 function App() {
   const { t } = useTranslation();
@@ -32,6 +31,8 @@ function App() {
         <select name="language" onChange={onChange}>
           <option value="fr">français</option>
           <option value="ar">arabe</option>
+          <option value="en">Anglais</option>
+          <option value="de">Germany</option>
         </select>
       </header>
     </div>
