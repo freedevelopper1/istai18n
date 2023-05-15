@@ -1,6 +1,6 @@
 {
-  "welcome": "Bienvenue!",
-  "sampleText": "Exemple <bold><italic>texte</italic></bold>.",
-  "changed_one": "Vous avez changé la langue {{count}} fois",
-  "changed_other": "Vous avez changé la langue {{count}} fois"
+  "welcome": "مرحبا!",
+  "sampleText": "عينة <bold><italic>نص</italic></bold>.",
+  "changed_one": "لقد قمت بتغيير اللغة {{count}} مرة ",
+  "changed_other": "لقد قمت بتغيير اللغة {{count}} مرة"
 }
