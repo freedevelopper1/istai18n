@@ -1,0 +1,6 @@
+{
+  "welcome": "Willkommen!",
+  "sampleText": "Beispiel  <bold><italic>textbeispiel</italic></bold>.",
+  "changed_one": "Du hast den Status von {{count}} Tickets geändert.",
+  "changed_other": "Du hast den Status von {{count}} Tickets geändert."
+}
